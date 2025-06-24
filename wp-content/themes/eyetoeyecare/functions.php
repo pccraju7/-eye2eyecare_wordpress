@@ -828,6 +828,9 @@ require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 
 
 
+
+
+
 function register_my_menus() {
     register_nav_menus(array(
         'primary' => __('Primary Menu')
@@ -846,3 +849,6 @@ function theme_setup() {
     ));
 }
 add_action('after_setup_theme', 'theme_setup');
+
+
+

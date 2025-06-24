@@ -6,11 +6,11 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-RewriteBase /eyetoeyecare_wordpress/
+RewriteBase /-eye2eyecare_wordpress/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /eyetoeyecare_wordpress/index.php [L]
+RewriteRule . /-eye2eyecare_wordpress/index.php [L]
 </IfModule>
 
 # END WordPress

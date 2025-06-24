@@ -12,6 +12,113 @@ window.addEventListener('load', function () {
   }, 300); // show loader for at least 2 seconds
 });
 
+ document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            const accordionContents = document.querySelectorAll('.accordion-content');
+            const accordionItems = document.querySelectorAll('.accordion-item');
+
+            function closeAllAccordionsExcept(activeContent) {
+                accordionContents.forEach(content => {
+                    if (content !== activeContent && content.classList.contains('open')) {
+                        content.classList.remove('open');
+                        const header = content.previousElementSibling;
+                        const arrow = header.querySelector('.accordion-arrow');
+                        arrow.classList.remove('rotated');
+
+                        // Reset rounded classes for the header and item
+                        header.classList.add('rounded-xl'); // Re-add default rounded to header
+                        header.classList.remove('rounded-t-xl'); // Remove top-rounded from header
+                        header.closest('.accordion-item').classList.add('rounded-xl'); // Re-add default rounded to item
+                        header.closest('.accordion-item').classList.remove('rounded-t-xl'); // Remove top-rounded from item
+                    }
+                });
+            }
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const arrow = this.querySelector('.accordion-arrow');
+                    const isOpening = !content.classList.contains('open');
+
+                    // Close all other accordions if opening a new one
+                    if (isOpening) {
+                        closeAllAccordionsExcept(content);
+                    }
+
+                    // Toggle the 'open' class for smooth transition
+                    content.classList.toggle('open');
+                    // Toggle the 'rotated' class for the arrow animation
+                    arrow.classList.toggle('rotated');
+
+                    // Adjust border-radius for header and parent item
+                    if (content.classList.contains('open')) {
+                        this.classList.remove('rounded-xl'); // Remove full rounded
+                        this.classList.add('rounded-t-xl'); // Add top rounded
+                        this.closest('.accordion-item').classList.remove('rounded-xl'); // Remove full rounded from parent
+                        this.closest('.accordion-item').classList.add('rounded-t-xl'); // Add top rounded to parent
+                    } else {
+                        this.classList.add('rounded-xl'); // Add full rounded
+                        this.classList.remove('rounded-t-xl'); // Remove top rounded
+                        this.closest('.accordion-item').classList.add('rounded-xl'); // Add full rounded to parent
+                        this.closest('.accordion-item').classList.remove('rounded-t-xl'); // Remove top rounded from parent
+                    }
+                });
+            });
+
+            // Set the first accordion item to be open by default
+            const firstHeader = document.querySelector('.accordion-header');
+            if (firstHeader) {
+                const firstContent = firstHeader.nextElementSibling;
+                const firstArrow = firstHeader.querySelector('.accordion-arrow');
+                firstContent.classList.add('open'); // Use 'open' for smooth transition
+                firstArrow.classList.add('rotated');
+                firstHeader.classList.remove('rounded-xl');
+                firstHeader.classList.add('rounded-t-xl');
+                firstHeader.closest('.accordion-item').classList.remove('rounded-xl');
+                firstHeader.closest('.accordion-item').classList.add('rounded-t-xl');
+            }
+        });
+
+
+
+
+// custom-menu.js
+
+jQuery(document).ready(function ($) {
+  $("li.menu-item-has-children").on("click", function (e) {
+    e.stopPropagation();
+
+    if ($(this).hasClass("menu-item-type-post_type")) {
+      return;
+    } else {
+      if ($(this).children("ul").css("display") == "none") {
+        $(this)
+          .children("ul")
+          .attr("style", "display: block !important");
+      } else {
+        $(this)
+          .children("ul")
+          .attr("style", "display: none !important");
+      }
+      $(this).toggleClass("open");
+      return false;
+    }
+  });
+
+  $(".menu-item-type-post_type").on("click", function (e) {
+    e.stopPropagation();
+    return;
+  });
+
+  $(".dwnbut").on("click", function (e) {
+    e.stopPropagation();
+    return;
+  });
+
+  $(".client-box img").on("click", function () {
+    window.location = "/prc-partners";
+  });
+});
 
 
  var form1Valid=false;
@@ -1031,3 +1138,20 @@ window.addEventListener('load', () => {
 		document.getElementById("cntpartsub").innerHTML='Sending...';
 		document.patientform.submit();
 	}
+	
+	
+	
+	document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.dropdown-submenu').forEach(function (el) {
+    el.addEventListener('mouseover', function () {
+      let submenu = el.querySelector('.dropdown-menu');
+      if (submenu) submenu.style.display = 'block';
+    });
+    el.addEventListener('mouseleave', function () {
+      let submenu = el.querySelector('.dropdown-menu');
+      if (submenu) submenu.style.display = 'none';
+    });
+  });
+});
+
+

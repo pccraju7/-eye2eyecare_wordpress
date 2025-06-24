@@ -49,23 +49,27 @@
 <!-- Our Services Section -->
 <section class="our-services">
 	<div class="container">
-		<h2 class="section-title" data-aos="zoom-in-up" data-aos-duration="1000"><?php the_field('services_section_title'); ?></h2>
+		<h2 class="section-title" data-aos="zoom-in-up" data-aos-duration="1000">
+			<?php the_field('services_section_title'); ?>
+		</h2>
 		<p class="section-subtitle" data-aos="zoom-in-up" data-aos-duration="1000">
 			<?php the_field('services_section_subtitle'); ?>
 		</p>
+
 		<div class="services-grid">
-
-			<?php for ($i = 1; $i <= 6; $i++): ?>
-				<div class="service-item" data-aos="zoom-in-up" data-aos-duration="1000">
-					<img src="<?php the_field('service_' . $i . '_image'); ?>" alt="<?php the_field('service_' . $i . '_title'); ?>">
-					<div class="service-content">
-						<span class="service-number"><?php the_field('service_' . $i . '_number'); ?></span>
-						<h3><?php the_field('service_' . $i . '_title'); ?></h3>
-						<img style="height:30px; width:30px;" src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon.png" alt="">
-					</div>
-				</div>
-			<?php endfor; ?>
-
+			<?php for ($i = 1; $i <= 6; $i++): 
+    $slug = get_field('service_' . $i . '_link'); // slug only
+    $url = home_url('/' . $slug); // convert to full URL
+?>
+    <a href="<?php echo esc_url($url); ?>" class="service-item" data-aos="zoom-in-up" data-aos-duration="1000">
+        <img src="<?php the_field('service_' . $i . '_image'); ?>" alt="<?php the_field('service_' . $i . '_title'); ?>">
+        <div class="service-content">
+            <span class="service-number"><?php the_field('service_' . $i . '_number'); ?></span>
+            <h3><?php the_field('service_' . $i . '_title'); ?></h3>
+            <img style="height:30px; width:30px;" src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon.png" alt="">
+        </div>
+    </a>
+<?php endfor; ?>
 		</div>
 
 		<a href="<?php the_field('services_viewall_link'); ?>" class="view-all-button">
@@ -92,14 +96,18 @@
 				<div class="overlay" data-aos="zoom-in-up" data-aos-duration="1000">
 					<h3><?php the_field('vision_title'); ?></h3>
 					<p><?php the_field('vision_subtitle'); ?></p>
-					<div class="icon1">➤</div>
+					<a href="<?php echo esc_url(home_url('insurance')); ?>">
+							<div class="icon2">➤</div>
+						</a>
 				</div>
 			</div>
 			<div class="image-box medical" data-aos="zoom-in-up" data-aos-duration="1000">
 				<div class="overlay">
 					<h3><?php the_field('medical_title'); ?></h3>
 					<p><?php the_field('medical_subtitle'); ?></p>
-					<div class="icon1">➤</div>
+					<a href="<?php echo esc_url(home_url('insurance')); ?>">
+							<div class="icon2">➤</div>
+						</a>
 				</div>
 			</div>
 		</div>

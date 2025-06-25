@@ -166,6 +166,7 @@
   visibility: hidden;
   opacity: 1;
   pointer-events: auto;
+  margin-top: 5px;
 }
 @media only screen and (max-width: 768px) {
   #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item > ul.mega-sub-menu {
@@ -323,11 +324,12 @@
   }
 }
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link {
-  background: transparent;
-  color: #a3a3a3;
+  background: #333;
+  color: #dddddd;
   font-weight: normal;
   text-decoration: none;
   border-color: white;
+  border-radius: 5px;
 }
 @media only screen and (max-width: 768px) {
   #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link {
@@ -1030,7 +1032,7 @@
   z-index: 999;
   position: absolute;
   width: max-content;
-  max-width: none;
+  min-width:170px;
   padding: 0px;
   border: 0;
   background: white;

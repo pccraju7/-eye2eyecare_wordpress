@@ -43,7 +43,7 @@
 				Digital eye strain happens when your eyes work harder than usual to focus on screens. Factors like poor lighting, screen glare, improper posture, or uncorrected vision can all contribute. When you focus on screens, you also blink less often, which can lead to dryness and irritation.
 				
 			</p>
-			<p class="cx-eyeexam__text">
+			<p class="cx-eyeexam__text" data-aos="zoom-in-up" data-aos-duration="1000">
 				Common Symptoms
 				<ul class="cx-eyeexam__text">
 					<li>Eye fatigue or discomfort</li>

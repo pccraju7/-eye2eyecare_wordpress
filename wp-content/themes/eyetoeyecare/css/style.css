@@ -145,7 +145,7 @@ Hide Bootstrap default caret
 	display: none !important;
 }
 
-Custom dropdown arrow
+
 .dropdown-arrow {
 	display: inline-block;
 	margin-left: 6px;
@@ -154,7 +154,7 @@ Custom dropdown arrow
 	vertical-align: middle;
 	border-left: 5px solid transparent;
 	border-right: 5px solid transparent;
-	border-top: 5px solid #fff; White arrow
+	border-top: 5px solid #fff; 
 	transition: transform 0.3s ease;
 }
 

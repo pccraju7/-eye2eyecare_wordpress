@@ -1364,4 +1364,10 @@
 #mega-menu-wrap-primary {
   clear: both;
 }
-.wp-block {}
+/* Target the dropdown wrapper and its generated layers */
+#mega-menu-wrap-primary #mega-menu-primary ul.mega-sub-menu,
+#mega-menu-wrap-primary #mega-menu-primary ul.mega-sub-menu:before,
+#mega-menu-wrap-primary #mega-menu-primary ul.mega-sub-menu:after {
+  border-radius: 6px !important;
+  overflow: hidden !important;
+}

@@ -758,14 +758,15 @@ jQuery(document).ready(function ($) {
 				return false;
 			}
 			form1Valid=true;
-			//nextForm(3);
-			modalsub.style.display = "block";
-			document.getElementById("cntpartsub").innerHTML="Do you want to submit the form. Once submited data can not be changed again.";
-			/*var conf=confirm("Do you want to submit the form. Once submited data can not be changed again.");
-			if(conf)
-			{
-				document.patientform.submit();
-			}*/
+			
+			// Navigate from Panel 3 to Panel 4 instead of showing submit modal
+			console.log("main.js checkpaientform3() - navigating to Panel 4");
+			document.getElementById('panel_3').style.display = 'none';
+			document.getElementById('panel_4').style.display = 'block';
+			
+			// OLD SUBMIT LOGIC REMOVED - Submit should only happen from Panel 7
+			// modalsub.style.display = "block";
+			// document.getElementById("cntpartsub").innerHTML="Do you want to submit the form. Once submited data can not be changed again.";
 		}
 		function changeoption(clearIds)
 		{
@@ -1068,9 +1069,29 @@ jQuery(document).ready(function ($) {
 			 var dataUrl = canvas.toDataURL();
 			 // sigText.innerHTML = dataUrl;		
 			 sigImage.setAttribute("value", dataUrl);
-			 if(canvasID==2){checkpaientform2();}
-			 else if(canvasID==3){checkpaientform3();}
-			 else{checkpaientform1();}
+			 
+			 // Updated canvas event handler - Panel 3 should navigate to Panel 4
+			 if(canvasID==1){checkpaientform1();}
+			 else if(canvasID==2){checkpaientform2();}
+			 else if(canvasID==3){
+				 console.log("main.js canvas handler for Panel 3 - navigating to Panel 4");
+				 // Call the navigation function instead of showing submit modal
+				 var modal = document.getElementById('myModal');
+				 var issig3=document.getElementById("issig3").value;
+				 if(issig3==2) {
+					 modal.style.display = "block";
+					 document.getElementById("cntpart").innerHTML='Please Put Signature';
+					 document.getElementById("cntenable").innerHTML="issig3";
+					 return false;
+				 }
+				 // Navigate to Panel 4
+				 document.getElementById('panel_3').style.display = 'none';
+				 document.getElementById('panel_4').style.display = 'block';
+			 }
+			 else if(canvasID==4){checkpaientform4();}
+			 else if(canvasID==5){checkpaientform5();}
+			 else if(canvasID==6){checkpaientform6();}
+			 else if(canvasID==7){checkpaientform7();}
 		  }, false);
 	}
 	(function() {
@@ -1084,7 +1105,7 @@ jQuery(document).ready(function ($) {
 			window.setTimeout(callback, 1000 / 60);
 		  };
 	  })();
-		initcanvas(1);initcanvas(2);initcanvas(3);
+		initcanvas(1);initcanvas(2);initcanvas(3);initcanvas(4);initcanvas(5);initcanvas(6);initcanvas(7);
 	})();	
 
 window.addEventListener('load', () => {
@@ -1139,8 +1160,88 @@ window.addEventListener('load', () => {
 		document.patientform.submit();
 	}
 	
+	// Validation functions for policy panels 4-7
+	function checkpaientform4()
+	{
+		form1Valid=false;
+		
+		var issig4=document.getElementById("issig4").value;
+		if(issig4==2)
+		{
+			modal.style.display = "block";
+			document.getElementById("cntpart").innerHTML='Please Put Signature';
+			document.getElementById("cntenable").innerHTML="issig4";
+			return false;
+		}
+		form1Valid=true;
+		
+		// Navigate from Panel 4 to Panel 5
+		console.log("main.js checkpaientform4() - navigating to Panel 5");
+		document.getElementById('panel_4').style.display = 'none';
+		document.getElementById('panel_5').style.display = 'block';
+	}
 	
+	function checkpaientform5()
+	{
+		form1Valid=false;
+		
+		var issig5=document.getElementById("issig5").value;
+		if(issig5==2)
+		{
+			modal.style.display = "block";
+			document.getElementById("cntpart").innerHTML='Please Put Signature';
+			document.getElementById("cntenable").innerHTML="issig5";
+			return false;
+		}
+		form1Valid=true;
+		
+		// Navigate from Panel 5 to Panel 6
+		console.log("main.js checkpaientform5() - navigating to Panel 6");
+		document.getElementById('panel_5').style.display = 'none';
+		document.getElementById('panel_6').style.display = 'block';
+	}
 	
+	function checkpaientform6()
+	{
+		form1Valid=false;
+		
+		var issig6=document.getElementById("issig6").value;
+		if(issig6==2)
+		{
+			modal.style.display = "block";
+			document.getElementById("cntpart").innerHTML='Please Put Signature';
+			document.getElementById("cntenable").innerHTML="issig6";
+			return false;
+		}
+		form1Valid=true;
+		
+		// Navigate from Panel 6 to Panel 7
+		console.log("main.js checkpaientform6() - navigating to Panel 7");
+		document.getElementById('panel_6').style.display = 'none';
+		document.getElementById('panel_7').style.display = 'block';
+	}
+	
+	function checkpaientform7()
+	{
+		form1Valid=false;
+		
+		var issig7=document.getElementById("issig7").value;
+		if(issig7==2)
+		{
+			modal.style.display = "block";
+			document.getElementById("cntpart").innerHTML='Please Put Signature';
+			document.getElementById("cntenable").innerHTML="issig7";
+			return false;
+		}
+		form1Valid=true;
+		
+		// Panel 7 is the final policy panel - show submit modal
+		console.log("main.js checkpaientform7() - showing submit modal");
+		modalsub.style.display = "block";
+		document.getElementById("cntpartsub").innerHTML="Do you want to submit the form. Once submitted data can not be changed again.";
+	}
+	
+
 	document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.dropdown-submenu').forEach(function (el) {
     el.addEventListener('mouseover', function () {

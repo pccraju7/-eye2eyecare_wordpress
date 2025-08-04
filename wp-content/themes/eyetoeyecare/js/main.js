@@ -938,6 +938,13 @@ jQuery(document).ready(function ($) {
     function initcanvas(canvasID)
 	{
 		 var canvas = document.getElementById("sig-canvas"+canvasID);
+		 
+		 // Check if canvas exists before trying to initialize it
+		 if (!canvas) {
+			 console.log("Canvas sig-canvas" + canvasID + " not found, skipping initialization");
+			 return;
+		 }
+		 
 		  var ctx = canvas.getContext("2d");
 		  ctx.strokeStyle = "#222222";
 		  ctx.lineWidth = 4;
@@ -1050,6 +1057,13 @@ jQuery(document).ready(function ($) {
 		  var sigImage = document.getElementById("sig-image"+canvasID);
 		  var clearBtn = document.getElementById("sig-clearBtn"+canvasID);
 		  var submitBtn = document.getElementById("sig-submitBtn"+canvasID);
+		  
+		  // Check if required UI elements exist
+		  if (!sigText || !sigImage || !clearBtn || !submitBtn) {
+			  console.log("Required UI elements for canvas " + canvasID + " not found, skipping UI setup");
+			  return;
+		  }
+		  
 		  clearBtn.addEventListener("click", function(e) {
 			clearCanvas();
 			//sigText.innerHTML = "Data URL for your signature will go here!";
@@ -1105,7 +1119,12 @@ jQuery(document).ready(function ($) {
 			window.setTimeout(callback, 1000 / 60);
 		  };
 	  })();
-		initcanvas(1);initcanvas(2);initcanvas(3);initcanvas(4);initcanvas(5);initcanvas(6);initcanvas(7);
+		// Initialize only the canvases that exist on the current page
+		for (let i = 1; i <= 7; i++) {
+			if (document.getElementById("sig-canvas" + i)) {
+				initcanvas(i);
+			}
+		}
 	})();	
 
 window.addEventListener('load', () => {
@@ -1239,6 +1258,32 @@ window.addEventListener('load', () => {
 		console.log("main.js checkpaientform7() - showing submit modal");
 		modalsub.style.display = "block";
 		document.getElementById("cntpartsub").innerHTML="Do you want to submit the form. Once submitted data can not be changed again.";
+	}
+	
+	// Navigation functions for policy panels
+	function goBackToPanel1() {
+		document.getElementById("panel_4").style.display='none';
+		document.getElementById("panel_1").style.display='';
+	}
+	
+	function goBackToPanel4() {
+		document.getElementById("panel_5").style.display='none';
+		document.getElementById("panel_4").style.display='';
+	}
+	
+	function goBackToPanel5() {
+		document.getElementById("panel_6").style.display='none';
+		document.getElementById("panel_5").style.display='';
+	}
+	
+	function goBackToPanel6() {
+		document.getElementById("panel_7").style.display='none';
+		document.getElementById("panel_6").style.display='';
+	}
+	
+	function goBackToPanel3() {
+		document.getElementById("panel_4").style.display='none';
+		document.getElementById("panel_3").style.display='';
 	}
 	
 

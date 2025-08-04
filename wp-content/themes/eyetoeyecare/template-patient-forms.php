@@ -68,6 +68,50 @@ if (isset($_POST['formsubmit']) && $_POST['formsubmit'] == 1) {
 		$fileurl3 = $filepathurl.$_POST['Firstname'] . "-" . $_POST['Lastname'] . $rand . '_3.png';
         file_put_contents($file3, $data3); 
     }
+    
+    // Panel 4 signature processing
+    $img4 = $_POST['sig-image4'];
+    if ($img4) {
+        $img4 = str_replace('data:image/png;base64,', '', $img4);
+        $img4 = str_replace(' ', '+', $img4);
+        $data4 = base64_decode($img4);
+        $file4 = UPLOAD_DIR . $_POST['Firstname'] . "-" . $_POST['Lastname'] . $rand . '_4.png';
+		$fileurl4 = $filepathurl.$_POST['Firstname'] . "-" . $_POST['Lastname'] . $rand . '_4.png';
+        file_put_contents($file4, $data4); 
+    }
+    
+    // Panel 5 signature processing
+    $img5 = $_POST['sig-image5'];
+    if ($img5) {
+        $img5 = str_replace('data:image/png;base64,', '', $img5);
+        $img5 = str_replace(' ', '+', $img5);
+        $data5 = base64_decode($img5);
+        $file5 = UPLOAD_DIR . $_POST['Firstname'] . "-" . $_POST['Lastname'] . $rand . '_5.png';
+		$fileurl5 = $filepathurl.$_POST['Firstname'] . "-" . $_POST['Lastname'] . $rand . '_5.png';
+        file_put_contents($file5, $data5); 
+    }
+    
+    // Panel 6 signature processing
+    $img6 = $_POST['sig-image6'];
+    if ($img6) {
+        $img6 = str_replace('data:image/png;base64,', '', $img6);
+        $img6 = str_replace(' ', '+', $img6);
+        $data6 = base64_decode($img6);
+        $file6 = UPLOAD_DIR . $_POST['Firstname'] . "-" . $_POST['Lastname'] . $rand . '_6.png';
+		$fileurl6 = $filepathurl.$_POST['Firstname'] . "-" . $_POST['Lastname'] . $rand . '_6.png';
+        file_put_contents($file6, $data6); 
+    }
+    
+    // Panel 7 signature processing
+    $img7 = $_POST['sig-image7'];
+    if ($img7) {
+        $img7 = str_replace('data:image/png;base64,', '', $img7);
+        $img7 = str_replace(' ', '+', $img7);
+        $data7 = base64_decode($img7);
+        $file7 = UPLOAD_DIR . $_POST['Firstname'] . "-" . $_POST['Lastname'] . $rand . '_7.png';
+		$fileurl7 = $filepathurl.$_POST['Firstname'] . "-" . $_POST['Lastname'] . $rand . '_7.png';
+        file_put_contents($file7, $data7); 
+    }
     $filename = UPLOAD_DIR . $_POST['Firstname'] . "-" . $_POST['Lastname'] . $rand . '.pdf';
     
 	if( strpos( $_POST['Emailaddress'], 'do-notrespond.me' ) !== false) {die('failed');}
@@ -980,6 +1024,10 @@ jQuery(function ($) {
 			document.getElementById("panel_4").style.display='none';
 			document.getElementById("panel_1").style.display='';
 		}
+		function goBackToPanel3() {
+			document.getElementById("panel_4").style.display='none';
+			document.getElementById("panel_3").style.display='';
+		}
 		function checkpaientform2()
 		{
 			var modal = document.getElementById('myModal');
@@ -1120,12 +1168,12 @@ jQuery(function ($) {
 		function checkpaientform7()
 		{
 			var modal = document.getElementById('myModal');
-			var retinal_option = document.querySelector('input[name="retinal_screening_option"]:checked');
-			if(!retinal_option)
+			var retinal_checkboxes = document.querySelectorAll('input[name="retinal_option"]:checked');
+			if(retinal_checkboxes.length === 0)
 			{
 				modal.style.display = "block";
 				document.getElementById("cntpart").innerHTML='Please select an option for Advanced Retinal Screening';
-				document.getElementById("cntenable").innerHTML="retinal_screening_option";
+				document.getElementById("cntenable").innerHTML="retinal_option";
 				return false;
 			}
 			var issig7=document.getElementById("issig7").value;
@@ -3033,7 +3081,7 @@ jQuery(function ($) {
 						<!-- Navigation Buttons -->
 						<tr>
 							<td style="padding:10px 5px; text-align:center;">
-								<span class="btn" onclick="goBackToPanel1();">PREVIOUS</span>
+								<span class="btn" onclick="goBackToPanel3();">PREVIOUS</span>
 								<span class="btn" onclick="checkpaientform4();">NEXT</span>
 							</td>
 						</tr>
@@ -3265,16 +3313,16 @@ jQuery(function ($) {
 			<div id="panel_7" style="display: none;">
 				<section>
 					<!-- Title Section -->
-					<table width="100%" bgcolor="#fff" align="center" cellspacing="0" cellpadding="0" style="font-family:Arial, Helvetica, sans-serif;">
+					<table width="100%" bgcolor="#fff" align="center" cellspacing="0" cellpadding="0" style="font-family:Arial, Helvetica, sans-serif; page-break-before: always;">
 						<tr><td>
 							<table cellspacing="0" cellpadding="0" style="width:100%;">
 								<tr>
 									<td style="text-align:center; width:100%;">
-										<h1 style="margin:20px 0 15px 0; font-size:24px; color:#000; font-family:Times New Roman, Times, serif;">
+										<h1 style="margin:20px 0 15px; font-size:24px; color:#000; font-family:Times New Roman, Times, serif;">
 											Advanced Retinal Screening Policy
 										</h1>
 										<p style="font-size:12px; font-style:italic; margin-bottom:20px;">
-											Please review the policy and sign below.
+											Please read and complete the form below.
 										</p>
 									</td>
 								</tr>
@@ -3286,50 +3334,46 @@ jQuery(function ($) {
 					<table width="100%" bgcolor="#fff" align="center" cellspacing="0" cellpadding="0" style="font-family:Arial, Helvetica, sans-serif; border:2px solid #000; padding:5px; font-size:12px !important;">
 						<tr><td style="padding:5px;">
 
-							<h2 style="font-size:18px; font-family:Times New Roman, Times, serif; color:#000; margin-top:0;">
-								Why Retinal Screening is Important:
-							</h2>
-							<ul style="font-size:11px; margin:5px 0 10px 20px; padding:0;">
-								<li>Retinal imaging is a high-tech camera used to photograph the back of your eye.</li>
-								<li>It allows us to detect signs of diabetes, high blood pressure, glaucoma, macular degeneration, and more.</li>
-								<li>We recommend this advanced screening for <strong>all patients</strong>, even those with no symptoms.</li>
-							</ul>
+							<p style="margin:10px 0;">
+								At <strong>Eye to Eyecare</strong>, we're committed to providing the most thorough and latest eye care available. 
+								We recommend a comprehensive <strong>Advanced Retinal Screening</strong>, which includes high-resolution retinal imaging 
+								and <strong>OCT (Optical Coherence Tomography)</strong>, as part of your exam today.
+							</p>
 
-							<h2 style="font-size:18px; font-family:Times New Roman, Times, serif; color:#000;">
-								Benefits of Retinal Imaging:
-							</h2>
-							<ul style="font-size:11px; margin:5px 0 10px 20px; padding:0;">
-								<li>Non-invasive and painless</li>
-								<li>No side effects like light sensitivity or blurred vision</li>
-								<li>Permanent photo record of your retina to monitor changes over time</li>
-							</ul>
+							<p style="margin:10px 0;">
+								<strong>What is the Retina?</strong> Think of the retina as the "film" inside a camera – it's the layer at the back of your eye 
+								that captures light and sends visual signals to your brain so you can see clearly.
+							</p>
 
-							<h2 style="font-size:18px; font-family:Times New Roman, Times, serif; color:#000;">
-								Cost and Insurance:
-							</h2>
-							<ul style="font-size:11px; margin:5px 0 10px 20px; padding:0;">
-								<li><strong>This procedure is not typically covered by vision insurance</strong></li>
-								<li><strong>Out-of-pocket cost is $39</strong> (due at time of service)</li>
-							</ul>
+							<p style="margin:10px 0;">
+								These non-invasive, painless advanced tests allow us to detect early signs of conditions like <strong>macular degeneration, 
+								glaucoma, diabetic eye disease</strong>, and other retinal or nerve issues – even in patients without symptoms or vision complaints.
+							</p>
 
-							<h2 style="font-size:18px; font-family:Times New Roman, Times, serif; color:#000;">
+							<p style="margin:10px 0;">
+								They are valuable for all patients and provide a more complete view of your eye health beyond what a standard exam can show.
+							</p>
+
+							<h2 style="font-size:20px; font-family:Times New Roman, Times, serif; color:#000; margin:10px 0;">
 								Please Select One:
 							</h2>
 							<table cellspacing="0" cellpadding="0" width="100%" style="margin-bottom:10px;">
 								<tr>
 									<td style="font-size:11px; padding:5px;">
-										<input type="radio" name="retinal_screening_option" value="yes"> Yes, I consent to the advanced retinal screening.<br>
-										<input type="radio" name="retinal_screening_option" value="no"> No, I decline the retinal screening.
+										<input type="checkbox" name="retinal_option" value="photo_only"> Retinal Imaging/Photo only ($39)<br>
+										<input type="checkbox" name="retinal_option" value="oct_scan"> OCT Scan only ($40)<br>
+										<input type="checkbox" name="retinal_option" value="both"> Both ($65 total)<br>
+										<input type="checkbox" name="retinal_option" value="none"> I do NOT want either test
 									</td>
 								</tr>
 							</table>
 
-							<h2 style="font-size:18px; font-family:Times New Roman, Times, serif; color:#000;">
+							<h2 style="font-size:20px; font-family:Times New Roman, Times, serif; color:#000; margin:10px 0;">
 								Acknowledgment:
 							</h2>
 							<p style="font-size:11px; margin:5px 0;">
-								By signing below, I acknowledge that I have read and understood the purpose of the retinal screening.
-								I understand the benefits, cost, and limitations of the service.
+								By signing below, I confirm I understand these tests are optional, usually not covered by insurance,
+								and I agree to pay the fee listed.
 							</p>
 
 							<!-- Signature & Date -->

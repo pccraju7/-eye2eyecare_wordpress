@@ -2194,69 +2194,424 @@ h2 {
 			</td>
 		</tr>
 	</table>
-	<div class="retinal-container">
-		<h2 class="retinal-title">Advanced Retinal Screening</h2>
-		<div class="retinal-subtitle">Please read and complete the form below.</div>
-		<hr class="retinal-hr" />
+	
+	<!-- Panel 4: Eye to Eyecare Office Policy -->
+	<table width="100%" bgcolor="#fff" align="center" cellspacing="0" cellpadding="0" style="font-family:Arial, Helvetica, sans-serif; page-break-before: always;">
+	  <tr><td>
+		<table cellspacing="0" cellpadding="0" style="width:100%;">
+		  <tr>
+			<td style="text-align: center; width: 100%;">
+			  <h1 style="margin: 20px 0 15px 0; font-size:24px; color:#000; font-family: Times New Roman, Times, serif;">EYE TO EYECARE OFFICE POLICY</h1>
+			</td>
+		  </tr>
+		</table>
+	  </td></tr>
+	</table>
 
-		<div class="retinal-section">
-			<p>
-				At Eye to Eyecare, we’re committed to providing the most thorough
-				and latest eye care available. We recommend a comprehensive <strong>Advanced
-					Retinal Screening</strong>, which includes high-resolution retinal
-				imaging and OCT (Optical Coherence Tomography), as part of your exam
-				today.
-			</p>
-			<p>
-				<strong>What is the Retina?</strong> Think of the retina as the “<strong>film</strong>”
-				inside a camera – it’s the layer of the back of your eye that
-				captures light and sends visual signals to your brain so you can see
-				clearly.
-			</p>
-			<p>These non-invasive, painless advanced tests allow us to detect
-				early signs of like macular degeneration, glaucoma, diabetic eye
-				disease, and other retinal or nerve issues – even in patients
-				without symptoms or vision complaints.</p>
-			<p>They are valuable for all patients and provide a more complete
-				view of your eye health beyond what a standard exam can show.</p>
-		</div>
+	<!-- Border Box Content -->
+	<table width="100%" bgcolor="#fff" align="center" cellspacing="0" cellpadding="0" style="font-family:Arial, Helvetica, sans-serif; border:2px solid #000; padding:5px; font-size:12px !important;">
+	  <tr>
+		<td style="text-align: left; padding: 5px;">
+		  <h2 style="font-size: 18px; color:#000; font-family: Times New Roman, Times, serif;">Payment and Financial Policy</h2>
+		  <ul style="font-size: 11px; margin: 5px 0; padding-left: 20px;">
+			<li>All payments, including co-pays, are due on the day of your visit.</li>
+			<li>This includes exams, contact lens evaluations, glasses, and medical services.</li>
+			<li><b>Payments are non-refundable</b> and must be <b>paid in full</b> at the time of service or purchase.</li>
+			<li><b>If you have insurance, let us know before your appointment.</b> You may still be responsible for some costs.</li>
+			<li>By signing below, you agree to pay all charges not covered by insurance.</li>
+		  </ul>
 
-		<hr class="retinal-hr" />
+		  <h2 style="font-size: 18px; color:#000; font-family: Times New Roman, Times, serif;">Glasses Policy</h2>
+		  <ul style="font-size: 11px; margin: 5px 0; padding-left: 20px;">
+			<li><b>All glasses orders are final and non-refundable.</b></li>
+			<li>Free recheck within 60 days of exam for blurry vision/headaches/discomfort.</li>
+			<li>After 60 days, recheck costs $50.</li>
+		  </ul>
 
-		<div class="retinal-checkbox-group">
-			<label><input type="checkbox" name="retinal_option"
-				value="photo_only"> Retinal Imaging/Photo only ($39)</label> <label><input
-				type="checkbox" name="retinal_option" value="oct_scan"> OCT Scan
-				only ($40)</label> <label><input type="checkbox"
-				name="retinal_option" value="both"> I would like to do both ($65
-				total)</label> <label><input type="checkbox" name="retinal_option"
-				value="none"> I do NOT want either of these tests</label>
-		</div>
+		  <h2 style="font-size: 18px; color:#000; font-family: Times New Roman, Times, serif;">Glasses Warranty</h2>
+		  <ul style="font-size: 11px; margin: 5px 0; padding-left: 20px;">
+			<li>Frames/lenses with warranty may be replaced <b>once within 1 year</b>, if approved.</li>
+			<li><b>$25 handling fee</b> applies per replacement.</li>
+			<li>Some restrictions apply.</li>
+		  </ul>
 
-		<hr class="retinal-hr" />
+		  <h2 style="font-size: 18px; color:#000; font-family: Times New Roman, Times, serif;">Privacy Policy (HIPAA)</h2>
+		  <ul style="font-size: 11px; margin: 5px 0; padding-left: 20px;">
+			<li>I understand and received a copy of the <b>Notice of Privacy Practices</b>.</li>
+			<li>I can keep a copy for my records.</li>
+		  </ul>
+		</td>
+	  </tr>
+	</table>
+	<!-- Access to Records Section -->
+	<table width="100%" bgcolor="#fff" align="center" cellspacing="0" cellpadding="0" style="font-family:Arial, Helvetica, sans-serif; border:2px solid #000; border-top:none; padding:5px; font-size:12px !important;">
+	  <tr>
+		<td style="padding:5px;">
+		  <h2 style="font-size:18px; font-family:Times New Roman, Times, serif; color:#000;">People who can access my medical records</h2>
+		  <table cellspacing="0" cellpadding="0" width="100%">
+			<tr>
+			  <td style="padding:5px; width:33.33%;">
+				<label style="font-size:12px;">Name 1:</label><br/>
+				<input type="text" value="<?php if(isset($_POST['AccessFirstName1'])){echo $_POST['AccessFirstName1']; }?>" style="width:95%; border:0; border-bottom:1px solid #000;">
+			  </td>
+			  <td style="padding:5px; width:33.33%;">
+				<label style="font-size:12px;">Relationship:</label><br/>
+				<input type="text" value="<?php if(isset($_POST['AccessRelation1'])){echo $_POST['AccessRelation1']; }?>" style="width:90%; border:0; border-bottom:1px solid #000;">
+			  </td>
+			  <td style="padding:5px; width:33.33%;">
+				<label style="font-size:12px;">Phone:</label><br/>
+				<input type="text" value="<?php if(isset($_POST['AccessPhone1'])){echo $_POST['AccessPhone1']; }?>" style="width:85%; border:0; border-bottom:1px solid #000;">
+			  </td>
+			</tr>
+			<tr>
+			  <td style="padding:5px;">
+				<label style="font-size:12px;">Name 2:</label><br/>
+				<input type="text" value="<?php if(isset($_POST['AccessFirstName2'])){echo $_POST['AccessFirstName2']; }?>" style="width:95%; border:0; border-bottom:1px solid #000;">
+			  </td>
+			  <td style="padding:5px;">
+				<label style="font-size:12px;">Relationship:</label><br/>
+				<input type="text" value="<?php if(isset($_POST['AccessRelation2'])){echo $_POST['AccessRelation2']; }?>" style="width:90%; border:0; border-bottom:1px solid #000;">
+			  </td>
+			  <td style="padding:5px;">
+				<label style="font-size:12px;">Phone:</label><br/>
+				<input type="text" value="<?php if(isset($_POST['AccessPhone2'])){echo $_POST['AccessPhone2']; }?>" style="width:85%; border:0; border-bottom:1px solid #000;">
+			  </td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
 
-		<h3 class="retinal-section">Acknowledgment:</h3>
-		<p>By signing below, I understand these tests are optional and not
-			usually covered by some insurance, so I am responsible for the fee(s)
-			listed above.</p>
+	  <!-- Radio: Leave Messages -->
+	  <tr>
+		<td style="padding:5px; font-size:12px;">
+		  Can we leave detailed messages with them?<br/>
+		  <input type="radio" name="messages" value="Yes" <?php if(isset($_POST['Is_Message']) && $_POST['Is_Message']=="Yes"){echo 'checked';} ?>> Yes
+		  <input type="radio" name="messages" value="No" <?php if(isset($_POST['Is_Message']) && $_POST['Is_Message']=="No"){echo 'checked';} ?>> No
+		</td>
+	  </tr>
 
-		<label class="retinal-label">Print Name:</label> <input type="text"
-			class="retinal-input" placeholder="Patient Name"> <label
-			class="retinal-label">Signature:</label>
-		<canvas id="retinal-signature-pad" class="retinal-canvas"></canvas>
-		<div class="retinal-sig-buttons">
-			<button type="button" class="retinal-clear-button"
-				onclick="retinalClearSignature()">Clear Signature</button>
-		</div>
+	  <!-- Radio: Give Rx -->
+	  <tr>
+		<td style="padding:5px; font-size:12px;">
+		  Can we give them prescriptions or contact lenses?<br/>
+		  <input type="radio" name="prescriptions" value="Yes" <?php if(isset($_POST['Is_Message2']) && $_POST['Is_Message2']=="Yes"){echo 'checked';} ?>> Yes
+		  <input type="radio" name="prescriptions" value="No" <?php if(isset($_POST['Is_Message2']) && $_POST['Is_Message2']=="No"){echo 'checked';} ?>> No
+		</td>
+	  </tr>
 
-		<label class="retinal-label">Date:</label> <input type="text"
-			class="retinal-date" id="retinalDate" readonly="">
+	  <!-- Signature & Date -->
+	  <tr>
+		<td style="padding:10px 5px;">
+		  <h2 style="font-size:18px; font-family:Times New Roman, Times, serif; color:#000;">Acknowledgment</h2>
+		  <p style="font-size:11px; margin:5px 0;">By signing below, I agree that I have read, understood, and accept the above office and privacy policies.</p>
+		  <table cellspacing="0" cellpadding="0" width="100%">
+			<tr>
+			  <td style="width:50%; text-align:center;">
+				<img src="<?php echo $file4;?>" alt="Signature Image" height="100px"><br/>
+				<label style="font-weight:600; font-size:12px;">Signature of patient or guardian</label>
+			  </td>
+			  <td style="width:50%; text-align:center;">
+				<input type="text" value="<?php echo date('m/d/Y'); ?>" readonly style="border:0; border-bottom:1px solid #000; font-weight:600; text-align:center; width:60%;"><br/>
+				<label style="font-size:12px;">DATE</label>
+			  </td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
 
-		<div>
-			<button type="submit" class="retinal-button"
-				onclick="retinalSubmitForm()">Submit</button>
-		</div>
-	</div>
+	<!-- Panel 5: Eye to Eyecare – Appointments & Cancellations Policy -->
+	<table width="100%" bgcolor="#fff" align="center" cellspacing="0" cellpadding="0"
+		   style="font-family:Arial, Helvetica, sans-serif; page-break-before: always;">
+	  <tr><td>
+		<table cellspacing="0" cellpadding="0" style="width:100%;">
+		  <tr>
+			<td style="text-align: center; width:100%;">
+			  <h1 style="margin:20px 0 15px 0; font-size:24px; color:#000;
+						 font-family: Times New Roman, Times, serif;">
+				EYE TO EYECARE – APPOINTMENTS &AMP; CANCELLATIONS POLICY
+			  </h1>
+			</td>
+		  </tr>
+		</table>
+	  </td></tr>
+	</table>
+
+	<!-- Main Content Section -->
+	<table width="100%" bgcolor="#fff" align="center" cellspacing="0" cellpadding="0"
+		   style="font-family:Arial, Helvetica, sans-serif; border:2px solid #000;
+				  padding:5px; font-size:12px !important;">
+	  <tr>
+		<td style="padding:5px;">
+		  <p style="font-size:12px; margin:5px 0;">
+			Thank you for choosing Eye to Eyecare. When you book an appointment with us, we reserve
+			that time just for you so we can give you the best care possible.
+		  </p>
+		  <p style="font-size:12px; margin:5px 0;">
+			We understand that sometimes plans change. If you need to cancel or reschedule, please let
+			us know as soon as possible.
+		  </p>
+
+		  <h2 style="font-size:18px; margin:10px 0 5px 0;
+					  font-family: Times New Roman, Times, serif; color:#000;">
+			Our Policy:
+		  </h2>
+		  <ul style="font-size:11px; margin:5px 0 10px 20px; padding:0;">
+			<li style="margin-bottom:8px;">
+			  <b>Cancel at least 24 hours before your appointment.</b><br/>
+			  This helps us offer that spot to another patient who may be waiting.
+			</li>
+			<li style="margin-bottom:8px;">
+			  <b>If you do not cancel in time and don't show up</b>, it will count as a "No‑Show".<br/>
+			  You may be charged a <b>$25 No‑Show Fee</b> per missed appointment.<br/>
+			  <em>(Fee may vary at the office's discretion.)</em>
+			</li>
+			<li style="margin-bottom:8px;">
+			  <b>If you reschedule too many times</b>, even with notice, we may place you on
+			  <b>"Walk‑In Only"</b> status.<br/>
+			  A No‑Show fee may still be charged.
+			</li>
+		  </ul>
+
+		  <h2 style="font-size:18px; margin:10px 0 5px 0;
+					  font-family: Times New Roman, Times, serif; color:#000;">
+			How to Contact Us:
+		  </h2>
+		  <p style="font-size:11px; margin:5px 0;">
+			You can cancel or reschedule your appointment by:
+		  </p>
+		  <p style="font-size:11px; margin:2px 0;">
+			Calling or texting us: <b>281‑565‑3937</b>
+		  </p>
+		  <p style="font-size:11px; margin:2px 0;">
+			Emailing us: <b>contact@eyetoeyecaretx.com</b>
+		  </p>
+
+		  <h2 style="font-size:18px; margin:10px 0 5px 0;
+					  font-family: Times New Roman, Times, serif; color:#000;">
+			Acknowledgment:
+		  </h2>
+		  <p style="font-size:11px; margin:5px 0;">
+			By signing below, I confirm that I have read, understood, and agree to follow this
+			Appointments and Cancellations Policy.
+		  </p>
+
+		  <!-- Signature & Date Section -->
+		  <table cellspacing="0" cellpadding="0" width="100%" style="margin-top:10px;">
+			<tr>
+			  <td style="width:50%; text-align:center; vertical-align:top;">
+				<img src="<?php echo $file5;?>" alt="Signature" height="100px"><br/>
+				<label style="font-weight:600; font-size:12px;">
+				  Signature of patient (or parent/guardian if minor)
+				</label>
+			  </td>
+			  <td style="width:50%; text-align:center; vertical-align:top;">
+				<input type="text" value="<?php echo date('m/d/Y');?>" readonly
+					   style="border:0; border-bottom:1px solid #000;
+							  font-weight:600; text-align:center; width:60%;">
+				<br/>
+				<label style="font-size:12px;">DATE</label>
+			  </td>
+			</tr>
+		  </table>
+		</td>
+	  </tr>
+	</table>
+
+	<!-- Panel 6: Contact Lens Exam Policy -->
+	<table width="100%" bgcolor="#fff" align="center" cellspacing="0" cellpadding="0"
+		   style="font-family:Arial, Helvetica, sans-serif; page-break-before: always;">
+	  <tr><td>
+		<table cellspacing="0" cellpadding="0" style="width:100%;">
+		  <tr>
+			<td style="text-align:center; width:100%;">
+			  <h1 style="margin:20px 0 15px 0; font-size:24px; color:#000;
+						 font-family:Times New Roman, Times, serif;">
+				Contact Lens Exam Policy
+			  </h1>
+			  <p style="font-size:12px; font-style:italic; margin-bottom:20px;">
+				Please read carefully and complete the form below.
+			  </p>
+			</td>
+		  </tr>
+		</table>
+	  </td></tr>
+	</table>
+
+	<!-- Content Section -->
+	<table width="100%" bgcolor="#fff" align="center" cellspacing="0" cellpadding="0"
+		   style="font-family:Arial, Helvetica, sans-serif; border:2px solid #000;
+				  padding:5px; font-size:12px !important;">
+	  <tr><td style="padding:5px;">
+
+		<h2 style="font-size:18px; font-family:Times New Roman, Times, serif; color:#000; margin-top:0;">
+		  What's Included in Today's Routine Eye Exam:
+		</h2>
+		<ul style="font-size:11px; margin:5px 0 10px 20px; padding:0;">
+		  <li>Glasses prescription (refraction)</li>
+		  <li>Full eye health evaluation</li>
+		</ul>
+
+		<h2 style="font-size:18px; font-family:Times New Roman, Times, serif; color:#000; margin-top:10px;">
+		  Please Note:
+		</h2>
+		<ul style="font-size:11px; margin:5px 0 10px 20px; padding:0;">
+		  <li>This exam does <b>NOT</b> include a contact lens exam or prescription.</li>
+		  <li>Contact lens exam incurs an <b>additional fee due on the day</b> of your visit.</li>
+		</ul>
+
+		<h2 style="font-size:18px; font-family:Times New Roman, Times, serif; color:#000; margin-top:10px;">
+		  Contact Lens Exam Fee Details:
+		</h2>
+		<ul style="font-size:11px; margin:5px 0 10px 20px; padding:0;">
+		  <li>Fee includes follow‑up visits (if needed)</li>
+		  <li>If not covered by insurance, typical <b>out‑of‑pocket fee: $80–$165</b></li>
+		  <li>All contact lens orders are final (no returns/exchanges)</li>
+		  <li>Follow‑up visits or final prescription must be within <b>30 days</b></li>
+		  <li>After 30 days, a <b>$40 follow‑up fee</b> applies</li>
+		</ul>
+
+		<h2 style="font-size:18px; font-family:Times New Roman, Times, serif; color:#000; margin-top:10px;">
+		  Additional Scheduling Notes:
+		</h2>
+		<ul style="font-size:11px; margin:5px 0 10px 20px; padding:0;">
+		  <li>If exam is on <b>a different day</b>, you have up to <b>3 months</b> to return</li>
+		  <li>If insurance doesn't cover it, you're responsible for <b>$80–$165</b></li>
+		  <li>After 3 months, a <b>$50 recheck fee</b> applies on top of exam fee</li>
+		</ul>
+
+		<h2 style="font-size:18px; font-family:Times New Roman, Times, serif; color:#000; margin-top:10px;">
+		  Please Select One:
+		</h2>
+		<table cellspacing="0" cellpadding="0" width="100%" style="margin-bottom:10px;">
+		  <tr>
+			<td style="font-size:11px; padding:5px;">
+			  <input type="checkbox" name="consent" value="yes" <?php if(isset($_POST['contact_consent']) && $_POST['contact_consent']=="yes"){echo 'checked';} ?>> Yes, I understand the contact lens exam is a separate fee.<br>
+			  <input type="checkbox" name="decline" value="no" <?php if(isset($_POST['contact_decline']) && $_POST['contact_decline']=="no"){echo 'checked';} ?>> No, I do not want a contact lens exam.
+			</td>
+		  </tr>
+		</table>
+
+		<h2 style="font-size:18px; font-family:Times New Roman, Times, serif; color:#000; margin-top:10px;">
+		  Acknowledgment:
+		</h2>
+		<p style="font-size:11px; margin:5px 0;">
+		  By signing below, I confirm that I have read and understand the Contact Lens Exam Policy and agree
+		  to the terms, including responsibility for out‑of‑pocket costs.
+		</p>
+
+		<!-- Signature & Date -->
+		<table cellspacing="0" cellpadding="0" width="100%" style="margin-top:10px;">
+		  <tr>
+			<td style="width:50%; text-align:center; vertical-align:top;">
+			  <img src="<?php echo $file6;?>" alt="Signature" height="100px"><br>
+			  <label style="font-size:12px; font-weight:600;">
+				Signature of patient (or legal representative)
+			  </label>
+			</td>
+			<td style="width:50%; text-align:center; vertical-align:top;">
+			  <input type="text" value="<?php echo date('m/d/Y');?>" readonly
+					 style="border:0; border-bottom:1px solid #000; width:60%;
+							text-align:center; font-weight:600;">
+			  <br>
+			  <label style="font-size:12px;">DATE</label>
+			</td>
+		  </tr>
+		</table>
+
+	  </td></tr>
+	</table>
+
+	<!-- Panel 7: Advanced Retinal Screening Form -->
+	<table width="100%" bgcolor="#fff" align="center" cellspacing="0" cellpadding="0"
+		   style="font-family:Arial, Helvetica, sans-serif; page-break-before: always;">
+	  <tr><td>
+		<table cellspacing="0" cellpadding="0" style="width:100%;">
+		  <tr>
+			<td style="text-align:center; width:100%;">
+			  <h1 style="margin:20px 0 15px 0; font-size:24px; color:#000;
+						 font-family:Times New Roman, Times, serif;">
+				Advanced Retinal Screening Policy
+			  </h1>
+			  <p style="font-size:12px; font-style:italic; margin-bottom:20px;">
+				Please read and complete the form below.
+			  </p>
+			</td>
+		  </tr>
+		</table>
+	  </td></tr>
+	</table>
+
+	<!-- Border Box Content -->
+	<table width="100%" bgcolor="#fff" align="center" cellspacing="0" cellpadding="0"
+		   style="font-family:Arial, Helvetica, sans-serif; border:2px solid #000;
+				  padding:5px; font-size:12px !important;">
+	  <tr><td style="padding:5px;">
+
+		<p style="margin:10px 0;">
+		  At <strong>Eye to Eyecare</strong>, we're committed to providing the most thorough and latest eye care available. 
+		  We recommend a comprehensive <strong>Advanced Retinal Screening</strong>, which includes high-resolution retinal imaging 
+		  and <strong>OCT (Optical Coherence Tomography)</strong>, as part of your exam today.
+		</p>
+
+		<p style="margin:10px 0;">
+		  <strong>What is the Retina?</strong> Think of the retina as the "film" inside a camera – it's the layer at the back of your eye 
+		  that captures light and sends visual signals to your brain so you can see clearly.
+		</p>
+
+		<p style="margin:10px 0;">
+		  These non-invasive, painless advanced tests allow us to detect early signs of conditions like <strong>macular degeneration, 
+		  glaucoma, diabetic eye disease</strong>, and other retinal or nerve issues – even in patients without symptoms or vision complaints.
+		</p>
+
+		<p style="margin:10px 0;">
+		  They are valuable for all patients and provide a more complete view of your eye health beyond what a standard exam can show.
+		</p>
+
+		<h2 style="font-size:20px; font-family:Times New Roman, Times, serif; color:#000; margin:10px 0;">
+		  Please Select One:
+		</h2>
+		<table cellspacing="0" cellpadding="0" width="100%" style="margin-bottom:10px;">
+		  <tr>
+			<td style="font-size:11px; padding:5px;">
+			  <input type="checkbox" name="retinal_option" value="photo_only" <?php if(isset($_POST['retinal_option']) && $_POST['retinal_option']=="photo_only"){echo 'checked';} ?>> Retinal Imaging/Photo only ($39)<br>
+			  <input type="checkbox" name="retinal_option" value="oct_scan" <?php if(isset($_POST['retinal_option']) && $_POST['retinal_option']=="oct_scan"){echo 'checked';} ?>> OCT Scan only ($40)<br>
+			  <input type="checkbox" name="retinal_option" value="both" <?php if(isset($_POST['retinal_option']) && $_POST['retinal_option']=="both"){echo 'checked';} ?>> Both ($65 total)<br>
+			  <input type="checkbox" name="retinal_option" value="none" <?php if(isset($_POST['retinal_option']) && $_POST['retinal_option']=="none"){echo 'checked';} ?>> I do NOT want either test
+			</td>
+		  </tr>
+		</table>
+
+		<h2 style="font-size:20px; font-family:Times New Roman, Times, serif; color:#000; margin:10px 0;">
+		  Acknowledgment:
+		</h2>
+		<p style="font-size:11px; margin:5px 0;">
+		  By signing below, I confirm I understand these tests are optional, usually not covered by insurance,
+		  and I agree to pay the fee listed.
+		</p>
+
+		<!-- Signature & Date -->
+		<table cellspacing="0" cellpadding="0" width="100%" style="margin-top:10px;">
+		  <tr>
+			<td style="width:50%; text-align:left; vertical-align:top;">
+			  <img src="<?php echo $file7;?>" alt="Signature" height="100px"><br>
+			  <label style="font-size:12px; font-weight:600;">
+				Signature of patient (or legal representative)
+			  </label>
+			</td>
+			<td style="width:50%; text-align:center; vertical-align:top;">
+			  <input type="text" value="<?php echo date('m/d/Y');?>" readonly
+					 style="border:0; border-bottom:1px solid #000; width:60%;
+							text-align:center; font-weight:600;">
+			  <br>
+			  <label style="font-size:12px;">DATE</label>
+			</td>
+		  </tr>
+		</table>
+
+	  </td></tr>
+	</table>
 
 </body>
 </html>
+		
